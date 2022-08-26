@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/me", to: "users#show"
   post "/users", to: "users#create"
   patch "/goals", to: "goals#update"
+  patch "/bills", to: "bills#update"
 
   get "/authorized_user", to: "users#show"
 
