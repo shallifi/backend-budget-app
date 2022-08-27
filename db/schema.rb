@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_27_014226) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_27_193139) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,14 +23,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_014226) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "expenses", force: :cascade do |t|
-    t.string "food"
-    t.string "gasoline"
-    t.string "savings"
-    t.string "investments"
-    t.string "miscellanous"
-    t.string "description"
-    t.integer "expense_amount"
+  create_table "expenditures", force: :cascade do |t|
+    t.string "type_of_expense"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +36,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_014226) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "user_expenditures", force: :cascade do |t|
+    t.integer "expense_amount"
+    t.string "description"
+    t.bigint "user_id", null: false
+    t.bigint "expenditure_id", null: false
+    t.index ["expenditure_id"], name: "index_user_expenditures_on_expenditure_id"
+    t.index ["user_id"], name: "index_user_expenditures_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "email"
@@ -50,4 +53,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_27_014226) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "user_expenditures", "expenditures"
+  add_foreign_key "user_expenditures", "users"
 end

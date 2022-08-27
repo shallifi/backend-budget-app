@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :expenses
+  resources :expenditures
   resources :bills
   resources :goals
   resources :users
