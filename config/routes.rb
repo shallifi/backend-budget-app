@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :bills
   resources :goals
   resources :users
+  resources :user_expenditures
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   post '/login', to: 'sessions#create'
@@ -11,6 +12,8 @@ Rails.application.routes.draw do
   post "/users", to: "users#create"
   patch "/goals", to: "goals#update"
   patch "/bills", to: "bills#update"
+  get '/user_expenditures', to: "user_expenditures#index"
+  post '/user_expenditures', to: "user_expenditures#create"
 
   get "/authorized_user", to: "users#show"
 

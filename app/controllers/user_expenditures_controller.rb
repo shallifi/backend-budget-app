@@ -1,4 +1,5 @@
 class UserExpendituresController < ApplicationController
+    
     def index 
         user_expenditures = UserExpenditure.all
         render json: user_expenditures

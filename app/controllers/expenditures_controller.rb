@@ -36,7 +36,7 @@ class ExpendituresController < ApplicationController
     end
 
     def expenditure_params
-        params.permit(:type_of_expense, :description)
+        params.permit(:type_of_expense)
     end 
 
 
