@@ -37,7 +37,7 @@ class GoalsController < ApplicationController
     end
 
     def goal_params
-        params.permit(:name_of_goal, :goal_amount)
+        params.permit(:name_of_goal, :goal_amount, :goal_payment)
     end 
 
 end

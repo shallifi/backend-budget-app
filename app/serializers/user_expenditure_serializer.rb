@@ -5,13 +5,13 @@ belongs_to :user
 belongs_to :expenditure
 
 
-def user
-    object.user.username
-end
+# def user
+#     object.user.username
+# end
 
-def expenditure
-    object.expenditure.type_of_expense
-end
+# def expenditure
+#     object.expenditure.type_of_expense
+# end
 
 
 end
