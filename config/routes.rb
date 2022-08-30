@@ -9,16 +9,16 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get "/me", to: "users#show"
-  post "/users", to: "users#create"
-  patch "/goals", to: "goals#update"
-  patch "/bills", to: "bills#update"
-  get '/user_expenditures', to: "user_expenditures#index"
-  post '/user_expenditures', to: "user_expenditures#create"
+  # post "/users", to: "users#create"
+  # patch "/goals", to: "goals#update"
+  # patch "/bills", to: "bills#update"
+  # get '/user_expenditures', to: "user_expenditures#index"
+  # post '/user_expenditures', to: "user_expenditures#create"
 
-  get "/authorized_user", to: "users#show"
+  # get "/authorized_user", to: "users#show"
 
     # route to test your configuration
-    get '/hello', to: 'application#hello_world'
+    # get '/hello', to: 'application#hello_world'
   # Defines the root path route ("/")
   # root "articles#index"
   # all
